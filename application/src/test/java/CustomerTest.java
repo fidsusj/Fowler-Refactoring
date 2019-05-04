@@ -20,8 +20,8 @@ class CustomerTest {
 
     @Test
     public void testAmountFor(){
-        Assertions.assertEquals(30, customer.amountFor(firstRental));
-        Assertions.assertEquals(4.5, customer.amountFor(secondRental));
+        Assertions.assertEquals(30, firstRental.getCharge());
+        Assertions.assertEquals(4.5, secondRental.getCharge());
     }
 
 }
