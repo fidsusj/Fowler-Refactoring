@@ -18,7 +18,7 @@ class MainTest {
         customer.addRental(secondRental);
     }
 
-    @Test
+     @Test
     public void testGetCharge(){
         Assertions.assertEquals(30, firstRental.getCharge());
         Assertions.assertEquals(4.5, secondRental.getCharge());
@@ -28,6 +28,16 @@ class MainTest {
     public void testGetFrequentRenterPoints(){
         Assertions.assertEquals(2, firstRental.getFrequentRenterPoints());
         Assertions.assertEquals(1, secondRental.getFrequentRenterPoints());
+    }
+
+    @Test
+    public void testGetTotalCharge(){
+        Assertions.assertEquals(34.5, customer.getTotalCharge());
+    }
+
+    @Test
+    public void testGetTotalFrequentRenterPoints(){
+        Assertions.assertEquals(3, customer.getTotalFrequentRenterPoints());
     }
 
 }
