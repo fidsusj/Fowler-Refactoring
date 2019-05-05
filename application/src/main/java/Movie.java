@@ -1,26 +1,39 @@
 class Movie {
 
-    static final int CHILDRENS = 2;
     static final int REGULAR = 0;
     static final int NEW_RELEASE = 1;
+    static final int CHILDRENS = 2;
 
     private String title;
-    private int priceCode;
+    private Price price;
 
-    Movie(String newtitle, int newpriceCode) {
-        title = newtitle;
-        priceCode = newpriceCode;
-    }
-
-    int getPriceCode() {
-        return priceCode;
-    }
-
-    void setPriceCode(int arg) {
-        priceCode = arg;
+    Movie(String title, int priceCode) {
+        this.title = title;
+        setPriceCode(priceCode);
     }
 
     String getTitle (){
-        return title;
+        return this.title;
     }
+
+    double getCharge(int daysRented) {
+        return this.price.getCharge(daysRented);
+    }
+
+    int getFrequentRenterPoints(int daysRented) {
+        return this.price.getFrequentRenterPoints(daysRented);
+    }
+
+    private void setPriceCode(int arg) {
+        switch(arg) {
+            case REGULAR: price = new RegularPrice();
+                          break;
+            case CHILDRENS: price = new ChildrensPrice();
+                            break;
+            case NEW_RELEASE: price = new NewReleasePrice();
+                              break;
+            default: throw new IllegalArgumentException("Incorrect Price Code");
+        }
+    }
+
 }
