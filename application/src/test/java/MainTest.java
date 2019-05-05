@@ -3,7 +3,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 @SuppressWarnings("WeakerAccess")
-class CustomerTest {
+class MainTest {
 
     private static Customer customer;
     private static Rental firstRental;
@@ -19,9 +19,15 @@ class CustomerTest {
     }
 
     @Test
-    public void testAmountFor(){
-        Assertions.assertEquals(30, customer.amountFor(firstRental));
-        Assertions.assertEquals(4.5, customer.amountFor(secondRental));
+    public void testGetCharge(){
+        Assertions.assertEquals(30, firstRental.getCharge());
+        Assertions.assertEquals(4.5, secondRental.getCharge());
+    }
+
+    @Test
+    public void testGetFrequentRenterPoints(){
+        Assertions.assertEquals(2, firstRental.getFrequentRenterPoints());
+        Assertions.assertEquals(1, secondRental.getFrequentRenterPoints());
     }
 
 }

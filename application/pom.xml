@@ -21,7 +21,7 @@
                 <version>3.0.0-M3</version>
                 <configuration>
                     <includes>
-                        <include>CustomerTest.java</include>
+                        <include>MainTest.java</include>
                     </includes>
                 </configuration>
             </plugin>
