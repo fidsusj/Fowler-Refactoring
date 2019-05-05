@@ -1,20 +1,23 @@
-import java.lang.*;
-import java.util.*;
+package java;
 
-class Customer {
+import java.util.Enumeration;
+import java.util.Vector;
+
+@SuppressWarnings("WeakerAccess")
+public class Customer {
 
     private String name;
     private Vector<Rental> rentals = new Vector<Rental>();
 
-    Customer (String newname){
+    public Customer (String newname){
         this.name = newname;
     }
 
-    void addRental(Rental arg) {
+    public void addRental(Rental arg) {
         this.rentals.addElement(arg);
     }
 
-    String statement() {
+    public String statement() {
         Enumeration<Rental> enum_rentals = rentals.elements();
 
         StringBuilder result = new StringBuilder();
@@ -32,7 +35,7 @@ class Customer {
         return result.toString();
     }
 
-    double getTotalCharge() {
+    public double getTotalCharge() {
         double result = 0;
         Enumeration<Rental> rentals = this.rentals.elements();
         while (rentals.hasMoreElements()) {
@@ -42,7 +45,7 @@ class Customer {
         return result;
     }
 
-    int getTotalFrequentRenterPoints(){
+    public int getTotalFrequentRenterPoints(){
         int result = 0;
         Enumeration<Rental> rentals = this.rentals.elements();
         while (rentals.hasMoreElements()) {

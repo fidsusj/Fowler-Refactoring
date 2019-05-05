@@ -1,6 +1,12 @@
+package java;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
+import java.Customer;
+import java.Movie;
+import java.Rental;
 
 @SuppressWarnings("WeakerAccess")
 class MainTest {
@@ -18,7 +24,7 @@ class MainTest {
         customer.addRental(secondRental);
     }
 
-     @Test
+    @Test
     public void testGetCharge(){
         Assertions.assertEquals(30, firstRental.getCharge());
         Assertions.assertEquals(4.5, secondRental.getCharge());

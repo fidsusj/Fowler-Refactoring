@@ -1,4 +1,7 @@
-class Movie {
+package java;
+
+@SuppressWarnings("WeakerAccess")
+public class Movie {
 
     static final int REGULAR = 0;
     static final int NEW_RELEASE = 1;
@@ -7,24 +10,24 @@ class Movie {
     private String title;
     private Price price;
 
-    Movie(String title, int priceCode) {
+    public Movie(String title, int priceCode) {
         this.title = title;
         setPriceCode(priceCode);
     }
 
-    String getTitle (){
+    public String getTitle (){
         return this.title;
     }
 
-    double getCharge(int daysRented) {
+    public double getCharge(int daysRented) {
         return this.price.getCharge(daysRented);
     }
 
-    int getFrequentRenterPoints(int daysRented) {
+    public int getFrequentRenterPoints(int daysRented) {
         return this.price.getFrequentRenterPoints(daysRented);
     }
 
-    private void setPriceCode(int arg) {
+    public void setPriceCode(int arg) {
         switch(arg) {
             case REGULAR: price = new RegularPrice();
                           break;

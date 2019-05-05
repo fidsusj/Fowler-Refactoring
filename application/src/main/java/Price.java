@@ -1,8 +1,10 @@
-abstract class Price {
+package java;
 
-    abstract int getPriceCode();
+public abstract class Price {
 
-    abstract double getCharge(int daysRented);
+    public abstract int getPriceCode();
+
+    public abstract double getCharge(int daysRented);
 
     int getFrequentRenterPoints(int daysRented) {
         return 1;

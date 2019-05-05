@@ -1,4 +1,4 @@
-import java.lang.*;
+package java;
 
 public class Program {
 

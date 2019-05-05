@@ -1,14 +1,16 @@
-class NewReleasePrice extends Price {
+package java;
 
-    int getPriceCode() {
+public class NewReleasePrice extends Price {
+
+    public int getPriceCode() {
         return Movie.NEW_RELEASE;
     }
 
-    double getCharge(int daysRented){
+    public double getCharge(int daysRented){
         return daysRented * 3;
     }
 
-    int getFrequentRenterPoints(int daysRented) {
+    public int getFrequentRenterPoints(int daysRented) {
         return (daysRented > 1) ? 2: 1;
     }
 
